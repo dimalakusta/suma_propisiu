@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Сумма прописью онлайн</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nds-calculator.css">
+
+    <script src="./js/summa-propisyu.js"></script>
+
+</head>
+
+<body>
+
+<contetnt>
+
+</contetnt>
+    <div class="content container">
+        <p class="tit">Сумма Прописью онлайн</p>
+        <p class="des_tit">С помощью этого сайта Вы сможете перевести цифровое значение суммы в прописное значение онлайн.
+            <br>
+            Можно выделить либо начислить НДС с указаной вами суммы.</p>
+        <p class="des_tit">Используя этот калькулятор Вы можете не беспокоиться о том что забудете результаты вычислений,<br>ведь калькулятор умеет сохранять результаты подсчетов, просто нажмите на СОХРАНИТЬ!</p>
+        <p class="des_tit">Хотите поделиться результатами подсчетов? Без проблем, калькулятор генерирует ссылку, которую
+            <br>Вы с легкостью сможете отправить своим коллегам.</p>
+        <p class="des_tit"></p>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="korpus">
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="17">
+                        <tr>
+                            <td align="center" valign="middle">
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle" class="chrn_ar_22">
+                                <table border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td height="16"></td>
+                                        <td height="16"></td>
+                                        <td height="16"></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="90">Сумма:</td>
+                                        <td>
+                                            <input type="text" id="summa-rub" class="chrn_ar_26_prav" maxlength="40" style="width:100%; max-width: 220px; text-align:right; padding-right:4px; border: 2px solid rgb(192, 192, 192);" onClick="select();" value="0.00" onKeyUp="rbtSmpr();">
+                                        </td>
+                                        <td width="72" align="center">руб.</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="90" height="22"></td>
+                                        <td height="22" align="right" valign="middle" class="ser_ar_14" id="okn_posdk">0.00</td>
+                                        <td width="55" height="22"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle" class="chrn_ar_22">
+                                <table border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td id="menu_nds">
+                                            <select id="tip_nds" class="chrn_ar_18" onChange="rbtSmpr();">
+                                                <option value="0" selected>Без НДС</option>
+                                                <option value="1">Выделить НДС</option>
+                                                <option value="2">Начислить НДС</option>
+                                            </select>
+                                        </td>
+                                        <td width="60" align="right">
+                                            <input type="text" id="summ-nds" class="chrn_ar_18" value="20.00" maxlength="5" style="width:50px; text-align:center; border: 2px solid rgb(192, 192, 192);" onClick="select();" onKeyUp="rbtSmpr();">
+                                        </td>
+                                        <td width="25" align="right">%</td>
+                                    </tr>
+                                    <tr>
+                                        <td height="12" colspan="2" align="center" class="ser_ar_14" id="sumsernds">НДС - 0.00</td>
+                                        <td width="22" height="12">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="70" align="center" valign="middle">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td align="center"><textarea rows="6" readonly class="chrn_ar_18 pole_otvet" onClick="select();" id="itog-sum-prop">Ноль рублей 00 коп.</textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td height="40" align="center" id="menu_vrpkz">
+                                            <select size="10" id="tip_pokaz" class="chrn_ar_18_menu_100" onChange="rbtSmpr();">
+                                                <option value="0" selected>Первая буква заглавная, НДС не прописывать</option>
+                                                <option value="1">Текст прописными буквами, НДС не прописывать</option>
+                                                <option value="2">Текст заглавными буквами, НДС не прописывать</option>
+                                                <option value="3">Первая буква заглавная, НДС только цифрами</option>
+                                                <option value="4">Текст прописными буквами, НДС только цифрами</option>
+                                                <option value="5">Текст заглавными буквами, НДС только цифрами</option>
+                                                <option value="6">Первая буква заглавная, НДС цифрами и словами</option>
+                                                <option value="7">Текст прописными буквами, НДС цифрами и словами</option>
+                                                <option value="8">Текст заглавными буквами, НДС цифрами и словами</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="65" align="center" valign="middle">
+                                <div id="knop_upra_sumpr">
+                                    <div id="knp_upr_1">
+                                        <input type="button" class="knop_nastr" value="Сбросить" style="width:150px;" onClick="sbrosVse();">
+                                    </div>
+                                    <div id="knp_upr_2">
+                                        <input type="button" class="knop_calk" value="Показать" onClick="rbtSmpr();">
+                                    </div>
+                                    <div id="knp_upr_3">
+                                        <input type="button" class="knop_nastr" value="Сохранить" style="width:150px;" onClick="shrSohr();">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" valign="middle">
+                                <div class="ssil_leva">Ссылка на эту страницу:</div>
+                                <div class="ssil_parv"><input type="text" id="ssil_stranic" class="ser_ar_14"  style="width:100%;" readonly onclick="select();"></div>
+                                <div class="clear"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="40" align="center" valign="bottom" class="sin_ar_22_b">Сохраненные результаты</td>
+                        </tr>
+                        <tr>
+                            <td height="50" align="center" valign="top" id="sohran_dan"> &nbsp; </td>
+                        </tr>
+                    </table>
+                    <div class="clear"></div>
+                    <script>
+                        nchZgr();
+
+                    </script>
+                </td>
+            </tr>
+        </table>
+
+        <div class="container bott">
+            <p class="tit_sec">
+                Как работать с калькулятором?
+            </p>
+            <p class="des_tit">
+                Советуем сначала выбрать тип расчетов, это может быть Начислить НДС,Выделить НДС, либо же просто перевести сумму в прописное значение.
+                <br>
+                Вы также сможете в дальнейшем изменить тип расчетов при работе с калькулятором, поскольку калькулятор мгновенно показывает результаты, как только вы введете новое число.
+                <br>
+                <br>
+                Если вы хотите быстро удалить введенные числа и сбросить калькулятор к первоначальным настройкам, просто нажмите на "Сбросить".
+                <br>
+                <br>
+                Результаты расчетов можно хранить в памяти калькулятора нажав на "Сохранить".
+                <br>
+                Вы можете с легкостью корректировать ваши сохраненные результаты - удалять ненужные, или удалить все сразу в один клик.
+                <br>
+                <br>
+                Калькулятор умеет генерировать ссылку на ваши расчеты, для удобного распространения их вашим колеггам.
+
+            </p>
+
+            <p class="tit_sec tt">
+                Как выделить НДС. Формула выделения НДС:
+            </p>
+            <p class="des_tit">
+                Если у Вас под рукой не окажется интернета и надо будет выделить НДС - запомните этот простой алгоритм.Чтобы выделить НДС из суммы, нужно сумму умножить на 20(процент ставки) и разделить на 120(100+процент ставки).
+            </p>
+            <div class="back-gr_bl">
+                <p>
+                    НДС = Сумма с НДС × Ставка НДС ÷ (100 + Ставка НДС)
+                </p>
+                <p>
+                    Сумма без НДС = Сумма с НДС − НДС
+                </p>
+            </div>
+            <p class="tit_sec tt">
+                Как начислить НДС. Формула начисления НДС:
+            </p>
+
+            <p class="des_tit">
+                Начислить НДС еще проще. Если ставка НДС 20%, то умножьте сумму без НДС на 0.20 и Вы получите сумму налога, а умножив на 1.20 Вы получите сумму с учетом налога.
+            </p>
+            <div class="back-gr_bl">
+                <p>
+                    НДС = Сумма без НДС × Ставка НДС
+                </p>
+                <p>
+                    Сумма с НДС = Сумма без НДС + НДС
+                </p>
+            </div>
+            <p class="tit_sec">Что такое НДС?</p>
+            <p class="des_tit">
+                С 1990 года на всей территории СССР был введен налог с продаж, который очень близок по смыслу к налогу на добавленную стоимость. Однако уже в 1992 правительством был принят закон «О налоге на добавленную стоимость» и введен НДС.
+            </p>
+            <p class="des_tit">
+                <b><span style="color:#000000">Налог на добавленную стоимость</span></b> — это налог, которым облагается только разница между стоимостью продажи и стоимостью покупки продукции или услуг и включается в итоговую стоимость, как процент от общей суммы добавленной стоимости.
+            </p>
+        </div>
+    </div>
+
+    <script src="js/rubles.js" ></script>
+</body>
+
+</html>
